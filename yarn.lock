@@ -5755,9 +5755,17 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-class-component@^6.1.0, vue-class-component@^6.2.0:
+vue-class-component@^6.0.0, vue-class-component@^6.1.0, vue-class-component@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.2.0.tgz#7adb1daa9a868c75f30f97f33f4f1b94aee62089"
+
+vue-class@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vue-class/-/vue-class-2.0.1.tgz#7a86d7c0615820b65ae26ef0726957a0c601f7e2"
+  dependencies:
+    vue "^2.5.0"
+    vue-class-component "^6.0.0"
+    vue-render-loader "^1.1.1"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.0"
@@ -5780,6 +5788,13 @@ vue-property-decorator@^6.1.0:
     reflect-metadata "^0.1.10"
     vue-class-component "^6.1.0"
 
+vue-render-loader@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-render-loader/-/vue-render-loader-1.1.1.tgz#b3f0d2d94df69fd9b83afd24408ce028a265a1b1"
+  dependencies:
+    vue-template-compiler "*"
+    vue-template-es2015-compiler "*"
+
 vue-router@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
@@ -5791,6 +5806,13 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
+vue-template-compiler@*:
+  version "2.5.17"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.17.tgz#52a4a078c327deb937482a509ae85c06f346c3cb"
+  dependencies:
+    de-indent "^1.0.2"
+    he "^1.1.0"
+
 vue-template-compiler@^2.5.16:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.16.tgz#93b48570e56c720cdf3f051cc15287c26fbd04cb"
@@ -5798,13 +5820,21 @@ vue-template-compiler@^2.5.16:
     de-indent "^1.0.2"
     he "^1.1.0"
 
-vue-template-es2015-compiler@^1.6.0:
+vue-template-es2015-compiler@*, vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
+
+vue@^2.5.0:
+  version "2.5.17"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
 vue@^2.5.16:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
+
+vuex@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.0.1.tgz#e761352ebe0af537d4bb755a9b9dc4be3df7efd2"
 
 watchpack@^1.5.0:
   version "1.6.0"
