@@ -1,5 +1,8 @@
 // This is an alternative way to define components using decorators
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Getter, namespace, Action } from 'vuex-class';
+
+const foo = namespace('foo');
 
 @Component({
   template: `
@@ -7,25 +10,25 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
       <div>Hello {{name}}{{exclamationMarks}}</div>
       <button @click="decrement">-</button>
       <button @click="increment">+</button>
+      <button @click="add(5)">+5</button>
     </div>
   `,
 })
 export default class HelloDecorator extends Vue {
-  @Prop() name!: string;
-  @Prop() initialEnthusiasm!: number;
+  @foo.Getter name!: string;
+  // @foo.Getter('name') name!: string;
+  // @Getter('foo/name') name!: string;
+  // @Getter('name', { namespace: 'foo' }) name!: string;
 
-  enthusiasm = this.initialEnthusiasm;
+  @Getter exclamationMarks!: string;
+  // @Getter('exclamationMarks') exclamationMarks!: string;
 
-  increment() {
-    this.enthusiasm += 1;
-  }
-  decrement() {
-    if (this.enthusiasm > 1) {
-      this.enthusiasm -= 1;
-    }
-  }
+  @Action increment!: () => void;
+  // @Action('increment') increment!: () => void;
 
-  get exclamationMarks(): string {
-    return Array(this.enthusiasm + 1).join('!');
-  }
+  @Action add!: (count: number) => void;
+  // @Action('add') add!: (count: number) => void;
+
+  @Action decrement!: () => void;
+  // @Action('decrement') decrement!: () => void;
 }

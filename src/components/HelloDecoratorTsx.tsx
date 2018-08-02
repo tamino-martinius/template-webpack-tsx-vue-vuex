@@ -1,25 +1,27 @@
 // This is an alternative way to define components using decorators
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Getter, namespace, Action } from 'vuex-class';
+
+const foo = namespace('foo');
 
 @Component
 export default class HelloDecorator extends Vue {
-  @Prop() name!: string;
-  @Prop() initialEnthusiasm!: number;
+  @foo.Getter name!: string;
+  // @foo.Getter('name') name!: string;
+  // @Getter('foo/name') name!: string;
+  // @Getter('name', { namespace: 'foo' }) name!: string;
 
-  enthusiasm = this.initialEnthusiasm;
+  @Getter exclamationMarks!: string;
+  // @Getter('exclamationMarks') exclamationMarks!: string;
 
-  increment() {
-    this.enthusiasm += 1;
-  }
-  decrement() {
-    if (this.enthusiasm > 1) {
-      this.enthusiasm -= 1;
-    }
-  }
+  @Action increment!: () => void;
+  // @Action('increment') increment!: () => void;
 
-  get exclamationMarks(): string {
-    return Array(this.enthusiasm + 1).join('!');
-  }
+  @Action add!: (count: number) => void;
+  // @Action('add') add!: (count: number) => void;
+
+  @Action decrement!: () => void;
+  // @Action('decrement') decrement!: () => void;
 
   render() {
     return (
@@ -27,6 +29,7 @@ export default class HelloDecorator extends Vue {
         <div>Hello {this.name}{this.exclamationMarks}</div>
         <button onClick={this.decrement}>-</button>
         <button onClick={this.increment}>+</button>
+        <button onClick={this.add.bind(this, 5)}>+5</button>
       </div>
     );
   }
