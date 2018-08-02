@@ -1,10 +1,15 @@
 import vue from 'vue';
+import vuex from 'vuex';
+import vueRouter from 'vue-router';
 import Hello from './components/Hello';
 import HelloDecorator from './components/HelloDecorator';
 import HelloTsx from './components/HelloTsx';
 import HelloDecoratorTsx from './components/HelloDecoratorTsx';
 import HelloVue from './components/Hello.vue';
 import HelloDecoratorVue from './components/HelloDecorator.vue';
+
+vue.use(vuex);
+vue.use(vueRouter);
 
 const v = new vue({
   el: '#app',
